@@ -2,6 +2,7 @@ import getBillboard from '@/actions/billboard';
 import getProducts from '@/actions/product';
 import Billboard from '@/components/Billboard';
 import ProductList from '@/components/ProductList';
+import Gallery from '@/components/gallery';
 import Container from '@/components/ui/Container';
 
 const Home = async () => {
