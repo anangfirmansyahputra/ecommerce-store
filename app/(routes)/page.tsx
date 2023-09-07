@@ -5,6 +5,8 @@ import ProductList from '@/components/ProductList';
 import Gallery from '@/components/gallery';
 import Container from '@/components/ui/Container';
 
+export const revalidate = 0;
+
 const Home = async () => {
 	const products = await getProducts({
 		isFeatured: true,
