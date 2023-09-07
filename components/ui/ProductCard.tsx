@@ -8,6 +8,8 @@ import Currency from './Currency';
 import { useRouter } from 'next/navigation';
 import { MouseEventHandler } from 'react';
 import usePreviewModal from '@/hooks/use-preview-modal';
+import useCartStore from '@/hooks/use-card';
+import toast from 'react-hot-toast/headless';
 
 interface Props {
 	data: Product;
@@ -16,12 +18,21 @@ interface Props {
 const ProductCard: React.FC<Props> = ({ data }) => {
 	const router = useRouter();
 	const previewModal = usePreviewModal()
+	const cart = useCartStore()
 	
 	const onPreview: MouseEventHandler<HTMLButtonElement>  = (event) => {
 		event.stopPropagation()
 
 		previewModal.onOpen(data)
 	}
+
+	const onAddToCart: MouseEventHandler<HTMLButtonElement>  = (event) => {
+		event.stopPropagation()
+
+		cart.addItem(data)
+	}
+
+
 
 	return (
 		<div
@@ -47,7 +58,7 @@ const ProductCard: React.FC<Props> = ({ data }) => {
 							}
 						/>
 						<IconButton
-							onClick={() => {}}
+							onClick={onAddToCart}
 							icon={
 								<ShoppingCart
 									size={20}
