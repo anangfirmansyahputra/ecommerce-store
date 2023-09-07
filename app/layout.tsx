@@ -9,8 +9,8 @@ import ToastProvider from '@/providers/toast-provider';
 const font = Poppins({ weight: ['100', '200', '300', '400', '500', '600', '700', '800'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Store',
-	description: 'Store',
+	title: 'Nusa Store',
+	description: 'Nusa Store',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
